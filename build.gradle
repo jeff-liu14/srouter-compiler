@@ -1,31 +1,25 @@
-plugins {
-    id 'java-library'
-    id 'maven-publish'
-}
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-}
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'com.github.jeff-liu14'
-            artifactId = 'srouter-compiler'
-            version = '1.0'
-
-            from components.java
-        }
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = "1.5.31"
+    repositories {
+        maven { url 'https://jitpack.io' }
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.2.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
-dependencies {
-    implementation 'org.apache.commons:commons-lang3:3.5'
-    implementation 'org.apache.commons:commons-collections4:4.1'
-    implementation 'com.alibaba:fastjson:1.2.62'
-    implementation 'com.google.auto.service:auto-service:1.0-rc7'
-    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc7'
-//    implementation project(path: ':srouter-annotation')
-    implementation 'com.github.jeff-liu14:srouter-annotation:1.0'
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
