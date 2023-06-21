@@ -32,7 +32,7 @@ import static com.laydown.srouter.compiler.util.Const.OPEN_AES;
 import static com.laydown.srouter.compiler.util.Const.SIMPLE_ROUTER_KEY;
 
 @AutoService(Processor.class)
-@SupportedSourceVersion(SourceVersion.RELEASE_11)
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
 @SupportedAnnotationTypes({"com.laydown.srouter.annotation.Route"})
 public class SimpleRouterProcessor extends AbstractProcessor {
     private Messager messager;
