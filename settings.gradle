@@ -1,3 +1,3 @@
-rootProject.name = "SRouterComplier"
+rootProject.name = "SRouterCompiler"
 include ':app'
-include ':srouter-complier'
+include ':srouter-compiler'
